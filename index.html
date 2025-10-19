@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Chúc mừng 20/10 💐</title>
+  <meta name="description" content="Thiệp 20/10 xinh xẻo cho người yêu – tối ưu giao diện mobile & GitHub Pages" />
+  <style>
+    :root {
+      --bg-start: #ff9a9e;  /* có thể đổi màu nền ở đây */
+      --bg-end:   #fad0c4;
+      --accent:   #ff3b6b;
+      --text:     #222;
+      --muted:    #666;
+      --white:    #fff;
+      --phone-w:  390px;    /* chiều rộng khung điện thoại */
+    }
+
+    /* Reset nhẹ */
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+      display: grid;
+      place-items: center;
+      overflow-x: hidden;
+      color: var(--text);
+    }
+
+    /* Bầu trời lấp lánh nhẹ để nền đỡ trống */
+    .sparkles {
+      position: fixed; inset: 0; pointer-events: none; opacity: .35;
+      background-image:
+        radial-gradient(circle at 10% 20%, rgba(255,255,255,.6) 0 1px, transparent 2px),
+        radial-gradient(circle at 80% 30%, rgba(255,255,255,.45) 0 1px, transparent 2px),
+        radial-gradient(circle at 50% 80%, rgba(255,255,255,.5) 0 1px, transparent 2px);
+      background-size: 200px 200px, 240px 240px, 220px 220px;
+      animation: twinkle 6s linear infinite;
+    }
+    @keyframes twinkle { to { transform: translateY(-10px); opacity:.4; } }
+
+    /* Khung điện thoại */
+    .phone {
+      width: min(100vw, var(--phone-w));
+      background: var(--white);
+      border-radius: 36px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.25);
+      overflow: hidden;
+      position: relative;
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
+      transform: translateZ(0);
+    }
+    .phone::before { /* tai thỏ giả lập */
+      content: ""; position: absolute; left: 50%; top: 0; transform: translate(-50%, -42%);
+      width: 180px; height: 32px; background: #000; border-radius: 0 0 18px 18px; opacity: .08;
+    }
+
+    header {
+      padding: 18px 20px 8px; text-align: center;
+      background: linear-gradient(180deg, rgba(255,59,107,.08), transparent);
+    }
+    .pill {
+      display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px;
+      border-radius: 999px; background: #fff; box-shadow: 0 6px 18px rgba(255,59,107,.18);
+      font-weight: 600; color: var(--accent);
+    }
+    .pill small { color: var(--muted); font-weight: 600; }
+
+    .hero {
+      padding: 8px 20px 0;
+    }
+    .hero img {
+      width: 100%; height: 240px; object-fit: cover; border-radius: 22px;
+      box-shadow: 0 10px 30px rgba(255,59,107,.25);
+      user-select: none;
+    }
+
+    .content { padding: 16px 20px 24px; }
+    h1 {
+      margin: 14px 0 8px; font-size: 24px; line-height: 1.25;
+      letter-spacing: .2px;
+    }
+    .subtitle { color: var(--muted); margin-bottom: 14px; }
+
+    .card {
+      background: #fff; border: 1px solid rgba(0,0,0,.05);
+      border-radius: 18px; padding: 14px 16px; box-shadow: 0 6px 24px rgba(0,0,0,.06);
+    }
+
+    .typewriter { min-height: 64px; font-size: 15px; line-height: 1.55; }
+
+    .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+    .btn {
+      border: 0; border-radius: 14px; padding: 12px 14px; font-weight: 700; cursor: pointer;
+      box-shadow: 0 10px 24px rgba(255,59,107,.22);
+      background: var(--accent); color: #fff; transition: transform .08s ease;
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn.secondary { background: #111; box-shadow: 0 10px 24px rgba(0,0,0,.22); }
+
+    footer { text-align: center; padding: 8px 16px 16px; color: var(--muted); font-size: 12px; }
+
+    /* Trái tim bay */
+    .hearts { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+    .heart {
+      position: absolute; bottom: -20px; font-size: 14px; filter: drop-shadow(0 6px 10px rgba(255,59,107,.35));
+      animation: floatUp linear forwards;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(.9); opacity: 0; }
+      8% { opacity: 1; }
+      92% { opacity: 1; }
+      100% { transform: translateY(-120%) scale(1.1); opacity: 0; }
+    }
+
+    /* Responsive nhỏ hơn 360px vẫn ổn */
+    @media (max-width: 360px) {
+      .hero img { height: 210px; }
+      h1 { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="sparkles"></div>
+
+  <main class="phone" role="main" aria-label="Thiệp điện tử 20/10">
+    <div class="hearts" id="hearts"></div>
+
+    <header>
+      <div class="pill" aria-label="Ngày đặc biệt">
+        <span>💘 20/10</span>
+        <small>Happy Vietnamese Women's Day</small>
+      </div>
+    </header>
+
+    <section class="hero">
+      <!-- TIP: Đổi URL GIF bên dưới thành GIF bạn thích (link .gif/.mp4 đều được) -->
+      <img id="heroGif" alt="GIF yêu thương" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTRiaTE1MmEwbGptbHphb3Z1aWttM2t3Y2FxMDRvdmxqbGJhaTBiYSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3oz8xKaR836UJOYeOc/giphy.gif" />
+    </section>
+
+    <section class="content">
+      <h1 id="title">Gửi em bé xinh 💌</h1>
+      <p class="subtitle" id="subtitle">Chúc mừng Ngày Phụ Nữ Việt Nam – cảm ơn em vì đã ở đây, dịu dàng mà chất.</p>
+
+      <div class="card">
+        <p class="typewriter" id="tw" aria-live="polite"></p>
+        <div class="actions">
+          <button class="btn" id="btnPlay">💐 Mở lời chúc</button>
+          <button class="btn secondary" id="btnGift">🎁 Nhận quà ảo</button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Tạo bởi <strong>you</strong> • Host trên GitHub Pages • Giao diện tối ưu mobile
+    </footer>
+  </main>
+
+  <script>
+    // ================== CẤU HÌNH NHANH (đổi theo ý bạn) ==================
+    const CONFIG = {
+      name: "Em yêu",
+      gifURL: "", // nếu muốn dùng GIF riêng, dán link vào đây. Để trống = dùng GIF mặc định.
+      title: "Gửi em bé xinh 💌",
+      subtitle: "Chúc mừng Ngày Phụ Nữ Việt Nam – cảm ơn em vì đã ở đây, dịu dàng mà chất.",
+      messages: [
+        "Chúc em 20/10 vui thật vui, luôn tự tin và rực rỡ như chính em!",
+        "Cảm ơn em vì đã bước vào đời anh, làm mọi thứ ngọt như kẹo.",
+        "Mong mọi điều em ước đều thành. Anh ở đây – cổ vũ em mỗi ngày 💖"
+      ]
+    };
+
+    // Áp dụng cấu hình
+    const elGif = document.getElementById('heroGif');
+    if (CONFIG.gifURL) elGif.src = CONFIG.gifURL;
+    if (CONFIG.title) document.getElementById('title').textContent = CONFIG.title;
+    if (CONFIG.subtitle) document.getElementById('subtitle').textContent = CONFIG.subtitle;
+
+    // Hiệu ứng gõ chữ
+    const tw = document.getElementById('tw');
+    const lines = CONFIG.messages;
+    let line = 0, pos = 0, typing = false;
+
+    function typeNext() {
+      if (line >= lines.length) return;
+      typing = true;
+      const current = lines[line];
+      tw.textContent = current.slice(0, pos + 1);
+      pos++;
+      if (pos < current.length) {
+        setTimeout(typeNext, 28 + Math.random()*30);
+      } else {
+        typing = false;
+        line++; pos = 0;
+        if (line < lines.length) setTimeout(()=>{ tw.textContent += "\n\n"; typeNext(); }, 500);
+      }
+    }
+
+    // Trái tim bay nhoi nhoi
+    const heartsWrap = document.getElementById('hearts');
+    function spawnHeart() {
+      const h = document.createElement('div');
+      h.className = 'heart';
+      h.textContent = Math.random() > .5 ? '💖' : '💘';
+      const x = Math.random()*100; // %
+      const dur = 2500 + Math.random()*1800;
+      h.style.left = x + '%';
+      h.style.animationDuration = dur + 'ms';
+      h.style.fontSize = (12 + Math.random()*14) + 'px';
+      heartsWrap.appendChild(h);
+      setTimeout(()=> h.remove(), dur);
+    }
+
+    function burstHearts(count=28) {
+      for (let i=0; i<count; i++) {
+        setTimeout(spawnHeart, i*30);
+      }
+    }
+
+    // Hành vi nút
+    document.getElementById('btnPlay').addEventListener('click', () => {
+      if (!typing) { tw.textContent = ''; line = 0; pos = 0; typeNext(); }
+      burstHearts(40);
+      navigator.vibrate?.(60);
+    });
+
+    document.getElementById('btnGift').addEventListener('click', () => {
+      burstHearts(50);
+      navigator.vibrate?.([20,40,20]);
+      // Gợi ý: có thể chuyển tới link quà thật (Shopee/TikTok Shop, v.v.)
+      // window.location.href = 'https://...';
+    });
+
+    // Auto nhá hàng 1 ít tim bay
+    setInterval(()=> Math.random() < .3 && spawnHeart(), 450);
+  </script>
+</body>
+</html>
